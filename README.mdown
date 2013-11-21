@@ -67,7 +67,7 @@ index
 ```   @replies = Reply.all.includes(:comment)```
 
 <pre>
-index (rendering posts & comments & replies)
+index (rendering posts and comments and replies)
     97475.6 ms
     80943.0 ms
     78684.1 ms
@@ -94,7 +94,7 @@ index (rendering posts only)
 - put comments and replies into posts/show
 
 <pre>
-show (posts/1, render 1 post & comments & replies)
+show (posts/1, render 1 post and comments and replies)
     760.5 ms
     737.5 ms
     872.7 ms
@@ -110,5 +110,5 @@ if that one can/should be fixed.
 
 
 ### use metric_fu
-This didn't give me a lot of useful data in the context of this assignment, thought 
-I cannot help but wonder if that is my lack of knowledge.
+This didn't give me a lot of useful data in the context of this assignment,
+though I cannot help but wonder if that is my lack of knowledge.
