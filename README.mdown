@@ -44,38 +44,47 @@ few times to get an average from Chrome inspector.
 
 Optimization log
 =======
-1. add miniprofiler
-
+### add miniprofiler
+<pre>
 index
-  104658.2 ms
-  106728.2 ms
+    104658.2 ms
+    106728.2 ms
+</pre>
 
-added :post to Comment.all
-  ```@comments = Comment.all.includes(:post)```
+### eager loading
+- implement eager loading for the comments by adding :post to Comment.all in app/controllers/comments_controller.rb
+```   @comments = Comment.all.includes(:post)```
 
+<pre>
 index
-  103850.0 ms
+    103850.0 ms
+</pre>
 
-added :comment to
-  ```@replies = Reply.all.includes(:comment)```
+- added :comment to app/controllers/replies_controller.rb
+```   @replies = Reply.all.includes(:comment)```
 
+<pre>
 index (rendering posts & comments & replies)
-  97475.6 ms
-  80943.0 ms
-  78684.1 ms
+    97475.6 ms
+    80943.0 ms
+    78684.1 ms
 show (posts/1, render 1 post, no comments, no replies)
-  142.2
+    142.2
+</pre>
 
-removed comments and replies from index
+- removed comments and replies from index
 
+<pre>
 index (rendering posts only)
-  361.6
-  165.2
+    361.6
+    165.2
+</pre>
 
-put comments and replies into posts/show
+- put comments and replies into posts/show
 
+<pre>
 show (posts/1, render 1 post & comments & replies)
-  760.5
-  737.5
-
+    760.5
+    737.5
+</pre>
 
