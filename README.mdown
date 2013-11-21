@@ -108,3 +108,7 @@ Checks for inefficient DB queries.
 Fixed one of these on the index page.  Still have one on the show page.  Not sure
 if that one can/should be fixed.
 
+
+### use metric_fu
+This didn't give me a lot of useful data in the context of this assignment, thought 
+I cannot help but wonder if that is my lack of knowledge.
