@@ -51,6 +51,7 @@ index
     106728.2 ms
 </pre>
 
+
 ### eager loading
 - implement eager loading for the comments by adding :post to Comment.all in app/controllers/comments_controller.rb
 ```   @comments = Comment.all.includes(:post)```
@@ -69,22 +70,32 @@ index (rendering posts & comments & replies)
     80943.0 ms
     78684.1 ms
 show (posts/1, render 1 post, no comments, no replies)
-    142.2
+    142.2 ms
+    200.4 ms
+    58.1 ms
 </pre>
 
+
+### optimization through better design
+
 - removed comments and replies from index
+  This changes the index page from displaying O(n^2) items to only
+  displaying O(n) items.  The price is that now the user must click
+  to get to the post show page, where all 200 comments and replies
+  are displayed.
 
 <pre>
 index (rendering posts only)
-    361.6
-    165.2
+    361.6 ms
+    165.2 ms
 </pre>
 
 - put comments and replies into posts/show
 
 <pre>
 show (posts/1, render 1 post & comments & replies)
-    760.5
-    737.5
+    760.5 ms
+    737.5 ms
+    872.7 ms
 </pre>
 
