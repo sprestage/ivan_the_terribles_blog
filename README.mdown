@@ -44,7 +44,9 @@ few times to get an average from Chrome inspector.
 
 Optimization log
 =======
+
 ### add miniprofiler
+Adds load time metrics to page.
 <pre>
 index
     104658.2 ms
@@ -77,7 +79,6 @@ show (posts/1, render 1 post, no comments, no replies)
 
 
 ### optimization through better design
-
 - removed comments and replies from index
   This changes the index page from displaying O(n^2) items to only
   displaying O(n) items.  The price is that now the user must click
@@ -98,4 +99,12 @@ show (posts/1, render 1 post & comments & replies)
     737.5 ms
     872.7 ms
 </pre>
+
+
+### add bullet
+Checks for inefficient DB queries.
+
+- N+1 Query detected
+Fixed one of these on the index page.  Still have one on the show page.  Not sure
+if that one can/should be fixed.
 
