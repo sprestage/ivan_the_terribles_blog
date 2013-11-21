@@ -1,0 +1,48 @@
+# My New Blog!
+
+I've got a lot to say, and now I have a place to say it!!!!!
+
+Read all my amazing posts!!!!! You can load them into the app with: `rake load_blog:load_shit`
+
+Since I know you want to read them all, I designed my page to show EVERYTHING on the front page of the site!!!!!
+
+I know it is a little slow (but totes worth it!!!!)... _Do you know how I can make it faster?_
+
+
+Purpose
+=======
+
+This rails app blog is intentionally designed terribly.  Modify the
+app to improve performance of page loads, without letting the user
+experience suffer (eg: one comment per page is fast, but clicking
+through them all is annoying).
+
+Deploy your app to heroku. Use whatever techniques you can think of
+to make it fast. Think carefully (or read up) on how Heroku serves
+up your site to find ways to get faster.
+
+Submit your own URL. Put your metrics in the README... you want to
+show how many posts you can load divided by the load time in ms. If
+you are using caching, include your numbers with a cache hit and a
+cache miss.
+
+Competition Guidelines:
+=======
+
+* The blog must contain full posts on the index page
+* All posts, comments, and replies must be accessible with a mouse
+(eg, there has to be a click path, they can't be left out)
+* We are attempting to optimize usability, so pages with poor UX
+will be penalized
+* If post_time = (posts on the page) / (ms to load page), then your
+score is: cache_miss(post_time) * cache_hit(post_time)
+* Your cache_miss time will be found by restarting all servers, and
+loading "/" a few times to get an average from Chrome inspector.
+* Your cache_hit time will be found by reloading that same page a
+few times to get an average from Chrome inspector.
+* A cool prize to the winner!
+
+Optimization log
+=======
+1. add miniprofiler
+
