@@ -40,7 +40,7 @@ class CommentsController < ApplicationController
   # POST /comments
   # POST /comments.json
   def create
-    @comment = Comment.new(params[:comment])
+    @comment = Comment.new(comment_params)
 
     respond_to do |format|
       if @comment.save
@@ -59,7 +59,7 @@ class CommentsController < ApplicationController
     @comment = Comment.find(params[:id])
 
     respond_to do |format|
-      if @comment.update_attributes(params[:comment])
+      if @comment.update(comment_params)
         format.html { redirect_to @comment, notice: 'Comment was successfully updated.' }
         format.json { head :no_content }
       else
@@ -80,4 +80,9 @@ class CommentsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+ private
+   def comment_params
+    params.require(:comment).permit(:body, :post)
+   end
 end
